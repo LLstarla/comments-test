@@ -8,7 +8,6 @@
           name: 'Loralee Starla Gentry',
         },
         content: 'Nana, I love you and miss you so much. You will always be in my heart.',
-        loved: false
       }
     ];
     $scope.newComment = {};
@@ -24,33 +23,6 @@
     };
     $scope.parseContent = function(content) {
       return $sce.trustAsHtml(content);
-    };
-    $scope.loveComment = function(commentId) {
-      var comment, i, len, ref, results;
-      ref = $scope.comments;
-      results = [];
-      for (i = 0, len = ref.length; i < len; i++) {
-        comment = ref[i];
-        if (comment.id === commentId) {
-          results.push(comment.loved = !comment.loved);
-        } else {
-          results.push(void 0);
-        }
-      }
-      return results;
-    };
-    $scope.addReply = function(author) {
-      if ($scope.newComment.content === void 0) {
-        $scope.newComment.content = '';
-      }
-      if ($scope.newComment.content.search('@' + author + '@') === -1) {
-        if ($scope.newComment.content[0] === '@') {
-          $scope.newComment.content = ', ' + $scope.newComment.content;
-        } else {
-          $scope.newComment.content = ' ' + $scope.newComment.content;
-        }
-        return $scope.newComment.content = '@' + author + '@' + $scope.newComment.content;
-      }
     };
     $scope.addNewComment = function() {
       $scope.newComment.id = $scope.comments.length + 1;

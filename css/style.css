@@ -64,24 +64,7 @@ ul li header h1.author:after {
   line-height: 20px;
   position: absolute;
 }
-ul li header button {
-  padding: 10px;
-  background: #fefff1;
-}
-ul li header button svg {
-  width: 20px;
-  height: 20px;
-  background: #fefff1;
-}
-ul li header button svg * {
-  fill: #bfbfbd;
-}
-ul li header button:hover svg * {
-  fill: rgba(162, 81, 80, 0.75);
-}
-ul li header button.loved svg * {
-  fill: #a25150;
-}
+
 
 ul li article {
   padding: 10px;
