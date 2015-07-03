@@ -1,0 +1,239 @@
+/*  
+COLOR PALLETTE
+
+brownish black...#4C3114
+ivory............#fefff1
+pink.............#ffa2a1
+purple...........#e893ba
+dark maroon......#a25150
+
+ */
+
+
+
+body {
+  max-width: 700px;
+  background: #ffa2a1;
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+ul li:not(:first-child) {
+  margin-top: 20px;
+}
+
+ul li header {
+  background: #fefff1;
+  border-bottom: 1px solid #e5e5e5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+ul li header * {
+  display: block;
+}
+ul li header h1 {
+  font-size: 1.25rem;
+  padding-left: 20px;
+  font-weight: normal;
+  background: #fefff1;
+  color: #a25150;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+ul li header h1.author:after {
+  content:;
+  margin: 10px 0 10px 10px;
+  padding: 0 5px;
+  background: #fefff1;
+  border-radius: 2px;
+  color: #ffa2a1;
+  font-size: 10px;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 20px;
+  position: absolute;
+}
+ul li header button {
+  padding: 10px;
+  background: #fefff1;
+}
+ul li header button svg {
+  width: 20px;
+  height: 20px;
+  background: #fefff1;
+}
+ul li header button svg * {
+  fill: #bfbfbd;
+}
+ul li header button:hover svg * {
+  fill: rgba(162, 81, 80, 0.75);
+}
+ul li header button.loved svg * {
+  fill: #a25150;
+}
+
+ul li article {
+  padding: 10px;
+  white-space: pre-line;
+  overflow-x: hidden;
+  background: #fefff1;
+  color: #4C3114;
+}
+ul li article .reply {
+  color: #4C3114;
+}
+ul li article strong {
+  font-weight: 500;
+}
+ul li article em {
+  font-style: italic;
+}
+ul li article a {
+  text-decoration: underline;
+}
+ul li article a:hover {
+  text-decoration: none;
+}
+ul li article code {
+  font-family: "Source Code Pro", monospace;
+}
+
+form {
+  margin-top: 20px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form input,
+form textarea {
+  padding: 9px 20px;
+  width: 100%;
+  background: #fefff1;
+}
+form input:not(:first-child),
+form textarea:not(:first-child) {
+  margin-top: 2px;
+}
+
+form input::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder {
+  color: #666;
+}
+form input::-moz-placeholder,
+form textarea::-moz-placeholder {
+  color: #666;
+}
+form input:-ms-input-placeholder,
+form textarea:-ms-input-placeholder {
+  color: #666;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: #666;
+}
+form input.ng-dirty.ng-invalid, form input.ng-dirty.ng-invalid::-webkit-input-placeholder,
+form textarea.ng-dirty.ng-invalid,
+form textarea.ng-dirty.ng-invalid::-webkit-input-placeholder {
+  color: #f66;
+}
+form input.ng-dirty.ng-invalid, form input.ng-dirty.ng-invalid::-moz-placeholder,
+form textarea.ng-dirty.ng-invalid,
+form textarea.ng-dirty.ng-invalid::-moz-placeholder {
+  color: #f66;
+}
+form input.ng-dirty.ng-invalid, form input.ng-dirty.ng-invalid:-ms-input-placeholder,
+form textarea.ng-dirty.ng-invalid,
+form textarea.ng-dirty.ng-invalid:-ms-input-placeholder {
+  color: #f66;
+}
+form input.ng-dirty.ng-invalid, form input.ng-dirty.ng-invalid::placeholder,
+form textarea.ng-dirty.ng-invalid,
+form textarea.ng-dirty.ng-invalid::placeholder {
+  color: #f66;
+}
+form textarea {
+  padding: 20px;
+  height: 120px;
+  resize: none;
+}
+form p {
+  margin-top: 10px;
+  padding: 10px 0;
+  width: 50%;
+}
+form p a {
+  text-decoration: underline;
+}
+form p a:hover {
+  text-decoration: none;
+}
+form button {
+  margin: 10px auto 0;
+  padding: 10px 0;
+  width: 25%;
+  background: #a25150;
+  border-radius: 2px;
+  color: #fefff1;
+  font-weight: normal;
+  text-align: center;
+  display: block;
+}
+
+@media (max-width: 440px) {
+  ul {
+    padding: 0;
+  }
+  ul li:before {
+    content: none;
+  }
+  ul li header img {
+    clip: rect(0, 0, 0, 0);
+  }
+  ul li header h1.author:after {
+    content: none;
+  }
+
+  form {
+    padding-left: 20px;
+  }
+  form:before {
+    content: none;
+  }
+  form img {
+    clip: rect(0, 0, 0, 0);
+  }
+  form input,
+  form textarea {
+    padding: 10px;
+  }
+  form textarea {
+    height: 80px;
+  }
+  form p,
+  form button {
+    margin: 10px 10px 0;
+    width: 100%;
+  }
+  form p {
+    padding: 0;
+  }
+}

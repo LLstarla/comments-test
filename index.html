@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular responsive comment system</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    
+   <!--  <link rel='stylesheet prefetch' href='css/__pawelski_io_reset_sass.css'>
+<link rel='stylesheet prefetch' href='css/__pawelski_io_codepen_sas.css'> -->
+<!-- <link rel='stylesheet prefetch' href='http://plugins.pawelski.io/ripple.min.css'> -->
+
+        <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+
+    
+<svg viewBox="0 0 100 100" style="display:none">
+  <defs>
+    <path id="icon_love" d="M73.4,6c-10.2,0-19,5.7-23.4,14.1C45.5,11.7,36.7,6,26.6,6C11.9,6,0,18,0,32.7C0,68.9,50,94,50,94 s50-25.1,50-61.3C100,18,88.1,6,73.4,6L73.4,6z"></path>
+    <path id="icon_reply" d="M75.9,100C87,79.9,88.9,49.2,45.4,50.2V75L8,37.5L45.4,0v24.3C97.4,22.9,103.2,70.4,75.9,100z"></path>
+  </defs>
+</svg>
+<div ng-app="comments" ng-controller="commentsCtrl">
+  <ul ng-if="comments.length">
+    <li ng-repeat="comment in comments">
+      <header>
+     <h1 >{{ comment.author.name }}</h1>
+        <button ng-click="loveComment(comment.id)" ng-class="{ loved: comment.loved }" class="love">
+          <svg viewBox="0 0 100 100">
+            <use xlink:href="#icon_love"></use>
+          </svg>
+        </button>
+        <button ng-click="addReply(comment.author.name)" class="reply">
+          <svg viewBox="0 0 100 100">
+            <use xlink:href="#icon_reply"></use>
+          </svg>
+        </button>
+      </header>
+      <article ng-bind-html="parseContent(comment.content)"></article>
+    </li>
+  </ul>
+  <form name="form" ng-submit="form.$valid &amp;&amp; addNewComment()" novalidate="novalidate">
+    <input type="text" placeholder="Name" ng-pattern="/[a-zA-Z.,-]+/" ng-model="newComment.author.name" required="required"/>
+    <textarea placeholder="Memory, Thoughts, Wishes, or Words" ng-model="newComment.content" required="required"></textarea>
+    <button type="submit" class="ripple">add comment</button>
+  </form>
+</div>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+<script src='http://www.myersdaily.org/joseph/javascript/md5.js'></script>
+<script src='http://plugins.pawelski.io/ripple.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
